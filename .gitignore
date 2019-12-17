@@ -2,6 +2,7 @@ __pycache__/
 .idea/
 **.html
 **.pyc
+**.yaml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
