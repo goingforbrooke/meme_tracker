@@ -9,7 +9,7 @@ class FourChanSpider(scrapy.Spider):
     start_urls = safe_load(Path('spider_config.yaml').read_text())['urls']
 
     def parse(self, response):
-        thread_id = response.url.split("/")[-1]
+        thread_id = response.url.split('/')[-2]
         download_time = f'{datetime.now().isoformat(timespec="seconds")}'
         filename = f'{download_time}-{thread_id}.html'
         with open(filename, 'wb') as outfile:
