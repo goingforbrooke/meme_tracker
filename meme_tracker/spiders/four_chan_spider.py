@@ -23,10 +23,12 @@ class FourChanSpider(scrapy.Spider):
         elif response.url.endswith('/'):
             self.log(f'Parsing thread links for thread: {response.url}.')
             reply_link_containers = soup.findAll('span', {'class': 'summary desktop'})
-            thread_urls = [str(container.a.attrs['href']) for container in reply_link_containers]
-            base_url = safe_load(Path('spider_config.yaml').read_text())['urls']
-            thread_urls = [base_url[0] + thread_url for thread_url in thread_urls]
-            self.log(f'Thread URLs: {thread_urls}.')
+            thread_ids = [str(container.a.attrs['href']) for container in reply_link_containers]
+            if thread_ids:
+                for thread_id in thread_ids:
+                    thread_url = response.urljoin(thread_id)
+                    self.log(f'Thread URL: {thread_url}.')
+                    #yield scrapy.Request(thread_url, callback=self.parse)
 
     def response_to_file(self, response):
         """Save the HTML content of the given Requests response to a file."""
