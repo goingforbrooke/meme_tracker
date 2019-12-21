@@ -19,9 +19,9 @@ class FourChanSpider(scrapy.Spider):
         """Get thread links or image links from a response's HTML content."""
         soup = BeautifulSoup(response.body, features='lxml')
         if 'thread' in response.url:
-            self.log(f'Parsing image links for board: {response.url}.')
+            self.log(f'Parsing image links for thread: {response.url}.')
         elif response.url.endswith('/'):
-            self.log(f'Parsing thread links for thread: {response.url}.')
+            self.log(f'Parsing thread links for board: {response.url}.')
             reply_link_containers = soup.findAll('span', {'class': 'summary desktop'})
             thread_ids = [str(container.a.attrs['href']) for container in reply_link_containers]
             if thread_ids:
