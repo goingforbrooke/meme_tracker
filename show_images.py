@@ -12,6 +12,7 @@ app = Flask(__name__, static_folder='saved_images/full', template_folder='web/te
 
 @app.route('/')
 def show_local_images():
+    """Display all images from saved_images/full/ in their native format. """
     image_urls = [url_for('static', filename=item.name)
                   for item in Path('saved_images', 'full').iterdir() if item.is_file()]
     return render_template('image_grid.html', image_urls=image_urls)
