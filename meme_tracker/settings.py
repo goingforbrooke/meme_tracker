@@ -57,6 +57,12 @@ CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #    'meme_tracker.pipelines.MemeTrackerPipeline': 300,
 #}
 
+ITEM_PIPELINES = {
+    'scrapy.pipelines.images.ImagesPipeline': 300,
+}
+
+IMAGES_STORE = 'saved_images'
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
