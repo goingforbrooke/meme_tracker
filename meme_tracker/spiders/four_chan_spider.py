@@ -23,11 +23,14 @@ class FourChanSpider(scrapy.Spider):
             # OP:< div class ="postContainer opContainer" id="pc489778063" >
             # Replies: < div class ="postContainer replyContainer" id="pc489778192" >
             posts = soup.findAll('div', {'class': 'fileText'})
+            image_urls = list()
             for post in posts:
                 image_reference = post.a['href']
                 # Remove the leading "//" from the image reference.
-                image_link = image_reference.replace('//', '')
-                print(image_link)
+                image_url = image_reference.replace('//', '')
+                if image_url.endswith('.jpg') or image_url.endswith('.jpeg'):
+                    image_urls.append('https://' + image_url)
+            yield {'image_urls': image_urls}
         elif response.url.endswith('/'):
             self.log(f'Parsing thread links for board: {response.url}.')
             reply_link_containers = soup.findAll('span', {'class': 'summary desktop'})
