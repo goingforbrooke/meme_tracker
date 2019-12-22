@@ -8,6 +8,7 @@ scrapy = "*"
 pyyaml = "*"
 beautifulsoup4 = "*"
 image = "*"
+flask = "*"
 
 [dev-packages]
 
