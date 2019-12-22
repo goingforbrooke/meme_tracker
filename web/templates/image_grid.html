@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All Images in saved_images/</title>
+</head>
+<body>
+    <h1>All Images in saved_images/</h1>
+    <ul id="images">
+    {% for image_url in image_urls %}
+        <img src="{{ image_url }}"/>
+    {% endfor %}
+    </ul>
+</body>
+</html>
+

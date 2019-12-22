@@ -1,7 +1,6 @@
 __pycache__/
 .idea/
 saved_images/
-**.html
 **.pyc
 **.yaml
 
