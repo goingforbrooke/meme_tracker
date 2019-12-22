@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for
 from pathlib import Path
 
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, static_folder='saved_images/full')
 
 @app.route('/')
 def show_local_images():
