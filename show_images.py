@@ -4,6 +4,7 @@ from pathlib import Path
 
 app = Flask(__name__, static_folder='saved_images/full', template_folder='web/templates')
 
+
 @app.route('/')
 def show_local_images():
     image_urls = [url_for('static', filename=item.name)
