@@ -1,3 +1,8 @@
+"""Display collected images in a web browser.
+
+Run `python3 show_images.py` and navigate to
+`http://localhost:5000<http://localhost:5000>` in a web browser.
+"""
 from flask import Flask, render_template, url_for
 from pathlib import Path
 
