@@ -20,6 +20,14 @@ class FourChanSpider(scrapy.Spider):
         soup = BeautifulSoup(response.body, features='lxml')
         if 'thread' in response.url:
             self.log(f'Parsing image links for thread: {response.url}.')
+            # OP:< div class ="postContainer opContainer" id="pc489778063" >
+            # Replies: < div class ="postContainer replyContainer" id="pc489778192" >
+            posts = soup.findAll('div', {'class': 'fileText'})
+            for post in posts:
+                image_reference = post.a['href']
+                # Remove the leading "//" from the image reference.
+                image_link = image_reference.replace('//', '')
+                print(image_link)
         elif response.url.endswith('/'):
             self.log(f'Parsing thread links for board: {response.url}.')
             reply_link_containers = soup.findAll('span', {'class': 'summary desktop'})
@@ -28,7 +36,7 @@ class FourChanSpider(scrapy.Spider):
                 for thread_id in thread_ids:
                     thread_url = response.urljoin(thread_id)
                     self.log(f'Thread URL: {thread_url}.')
-                    #yield scrapy.Request(thread_url, callback=self.parse)
+                    yield scrapy.Request(thread_url, callback=self.parse)
 
     def response_to_file(self, response):
         """Save the HTML content of the given Requests response to a file."""
