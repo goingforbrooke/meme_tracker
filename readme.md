@@ -14,12 +14,17 @@ browser.
     user@pc:~$ pip install --user pipenv
     ```
 
-2. Clone this repo.
+2. Create a virtual environment for this project and activate it.
+    ```console
+    user@pc:~$ pip shell
+    ```
+
+3. Clone this repo.
     ```console
     user@pc:~/projects$ git clone git@github.com:Obleskar/meme_tracker.git
     ```
 
-3. Install dependencies.
+4. Install dependencies.
     ```console
     user@pc:~/projects/meme_tracker$ pipenv install
     ```
