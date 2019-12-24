@@ -49,6 +49,12 @@ of URLs to scrape.
     ```
 
 2. Run the image scraper.
+
+    If you provided a board, then every image from every thread on the board's
+    first page will be downloaded.
+    
+    If you provided a thread, then every image in that thread will be
+    downloaded.
     ```console
     user@pc:~/projects/meme_tracker$ scrapy crawl 4chan_images
     ```
