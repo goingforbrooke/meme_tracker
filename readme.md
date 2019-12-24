@@ -51,3 +51,20 @@ a grid.
 ## Motivation
 To provide an easy way for researchers to view daily summaries of images on the
 internet.
+
+## To Do
+
+- [x] Feat: Scrape image URLs from /v
+- [x] Feat: Download images
+- [x] Feat: Show images in browser
+- [ ] Feat: Generate thumbnails
+- [ ] Feat: Justify image grid
+- [ ] Internal: Change yaml config from dict to list
+- [ ] Internal: Write names and locations to database
+- [ ] Feat: Add JupyterNotebooks
+- [ ] Feat: Add a dhashing notebook 
+- [ ] Feat: Run dhashing notebook with papermill
+- [ ] Feat: Cluster images
+- [ ] Feat: Display image cluster "compass" in web browser
+- [ ] Feat: Write origin post URLs to the database
+- [ ] Feat: Click image to open origin post in new tab
