@@ -1,5 +1,9 @@
 # Meme Tracker
 
+:frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog:
+:frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog:
+:frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog: :frog:
+
 ## Description
 Meme tracker is a web scraper and image grouper for internet memes.
 
