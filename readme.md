@@ -35,8 +35,12 @@ browser.
 
 ## Usage
 
-1. Add the URLs that you want to scrape to the 
-[YAML](https://pyyaml.org/wiki/PyYAMLDocumentation) config file.
+1. Create a [YAML](https://pyyaml.org/wiki/PyYAMLDocumentation) file called 
+`spider_config.yaml`, place it in the project's root directory, and add a list 
+of URLs to scrape.
+
+    The scraper's currently limited to 4chan boards and 4chan threads.
+
     ```console
     user@pc:~/projects/meme_tracker$ vim spider_config.yaml
     ```
