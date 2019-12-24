@@ -55,6 +55,9 @@ of URLs to scrape.
     
     If you provided a thread, then every image in that thread will be
     downloaded.
+    
+    Press `Ctrl`+`c` once to top scraping once the current downloads have
+    finished and again to stop scraping immediately.
     ```console
     user@pc:~/projects/meme_tracker$ scrapy crawl 4chan_images
     ```
